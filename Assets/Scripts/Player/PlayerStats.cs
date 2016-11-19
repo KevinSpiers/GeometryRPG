@@ -80,12 +80,12 @@ public class PlayerStats {
 		}
 	}
 
-	private int attkDmg;
+	private int attk;
 	public int AttackDamage
 	{
 		get
 		{
-			return attkDmg;
+			return attk;
 		}
 	}
 
@@ -98,11 +98,9 @@ public class PlayerStats {
 		maxHp = 100;
 		hp = maxHp;
 		def = 3;
-		attkDmg = 10;
+		attk = 10;
 
-		maxHp = 0;
 		def = 0;
-		attkDmg = 0;
 	}
 
     //Experience
@@ -198,12 +196,12 @@ public class PlayerStats {
 
 	public void GainAttackDamage(int _attkDmgGain)
 	{
-		attkDmg += _attkDmgGain;
+		attk += _attkDmgGain;
 	}
 
 	public void LoseAttackDamage(int _attkDmgLose)
 	{
-		attkDmg -= _attkDmgLose;
+		attk -= _attkDmgLose;
 	}
 
 }
