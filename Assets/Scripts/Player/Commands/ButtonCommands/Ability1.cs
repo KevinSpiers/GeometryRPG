@@ -2,16 +2,16 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class Skill1 : ICommand {
+public class Ability1 : ICommand {
 	Player player;
-	public Skill1(Player _player)
+	public Ability1(Player _player)
 	{
 		player = _player;
 	}
 
 	public void KeyDown()
 	{
-		//Do Nothing
+		//Do Something
 	}
 
 	public void KeyHeld()

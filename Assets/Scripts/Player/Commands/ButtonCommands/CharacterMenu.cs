@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StatsMenu : ICommand {
+public class CharacterMenu : ICommand {
 	private Player player;
-	public StatsMenu(Player _player)
+	public CharacterMenu(Player _player)
 	{
 		player = _player;
 	}
