@@ -1,3 +1,3 @@
-﻿public class IAttribute {
+﻿public interface IAttribute {
 	void ApplyAttribute(PlayerStats stats);
 }

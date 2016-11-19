@@ -4,7 +4,7 @@ using System.Collections;
 public class Fireball : IAbility {
 	private Player player;
 	private CoolDownTimer akd;
-	public CoolDownTimer abilityCoolDown
+	public CoolDownTimer AbilityCoolDown
 	{ 
 		get
 		{
@@ -24,7 +24,7 @@ public class Fireball : IAbility {
 	}
 
 
-	public void UseSkill()
+	public void UseAbility()
 	{
 		if (akd.CanUse) {
 			CreateAttack();

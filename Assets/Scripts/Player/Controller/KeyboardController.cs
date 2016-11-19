@@ -35,7 +35,6 @@ public class KeyboardController : IController {
 		controlList.Add (KeyCode.S, new MoveDown (_player, this));
 		controlList.Add (KeyCode.D, new MoveRight (_player, this));
 		controlList.Add (KeyCode.Escape, new OptionsMenu (_player));
-		controlList.Add (KeyCode.C, new StatsMenu (_player));
 		controlList.Add (KeyCode.E, new Interact (_player));
 		controlList.Add (KeyCode.F, new FullScreen (_player));
         controlList.Add(KeyCode.LeftArrow, new Ability1(_player));
@@ -84,6 +83,6 @@ public class KeyboardController : IController {
         Vector2.SmoothDamp(knockback, Vector2.zero, ref knockback, 2f);
         Vector2.SmoothDamp(verticalMovement, Vector2.zero, ref verticalMovement, .5f);
         Vector2.SmoothDamp(horizontalMovement, Vector2.zero, ref horizontalMovement, .5f);
-        player.GetComponentInChildren<Animator>().SetInteger("Health", player.stats.Health);
+        //player.GetComponentInChildren<Animator>().SetInteger("Health", player.stats.Health);
     }
 }
