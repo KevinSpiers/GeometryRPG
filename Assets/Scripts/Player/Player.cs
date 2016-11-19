@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	void Start () 
 	{
         //Application.runInBackground = true;
+		characterClass = new WarriorClass();
+		attr = new ExtraHealth ();
 		controls = new KeyboardController (this);
     }
 

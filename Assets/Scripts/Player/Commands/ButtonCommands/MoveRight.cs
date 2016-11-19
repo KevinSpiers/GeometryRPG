@@ -23,7 +23,6 @@ public class MoveRight : ICommand {
 	{
 		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
             controller.HorizontalMovement = Vector2.right * player.characterClass.ps.MovementSpeed;
-            anim.SetBool("Right", true);
         }
 	}
 
