@@ -17,12 +17,9 @@ public class Interact : ICommand
 
     public void KeyHeld()
     {
-        if (!Game.GamePaused && player.stats.Health > 0)
+		if (!Game.GamePaused && player.characterClass.ps.Health > 0)
         {
-            if (player.items.Weapon != null)
-            {
-                player.items.Weapon.UseWeapon();
-            }
+            
         }
     }
 

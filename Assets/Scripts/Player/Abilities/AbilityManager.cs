@@ -18,6 +18,13 @@ public class AbilityManager {
 		}
 	}
 
+	public void UseAbility(int _position)
+	{
+		if (_position >= 0 && _position < abilityLength) {
+			ability [_position].UseAbility ();
+		}
+	}
+
 	public void CoolDown()
 	{
 		for(int i = 0; i < abilityLength; i++){

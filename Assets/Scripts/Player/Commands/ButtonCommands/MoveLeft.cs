@@ -16,22 +16,18 @@ public class MoveLeft : ICommand {
 
 	public void KeyDown()
 	{
-        if (!Game.GamePaused && player.stats.Health > 0)
-        {
-            anim.SetBool("Left", true);
-        }
+
 	}
 
 	public void KeyHeld()
 	{
-		if (!Game.GamePaused && player.stats.Health > 0) {
-            controller.HorizontalMovement = Vector2.left * player.stats.MoveSpeed;
-            anim.SetBool("Left", true);
+		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
+            controller.HorizontalMovement = Vector2.left * player.characterClass.ps.MovementSpeed;
         }
 	}
 
     public void KeyUp()
     {
-        anim.SetBool("Left", false);
+		
     }
 }

@@ -16,22 +16,18 @@ public class MoveUp : ICommand {
 
 	public void KeyDown()
 	{
-        if (!Game.GamePaused && player.stats.Health > 0)
-        {
-            anim.SetBool("Up", true);
-        }
+
     }
 
 	public void KeyHeld()
 	{
-		if (!Game.GamePaused && player.stats.Health > 0) {
-            controller.VerticalMovement = Vector2.up * player.stats.MoveSpeed;
-            anim.SetBool("Up", true);
+		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
+			controller.VerticalMovement = Vector2.up * player.characterClass.ps.MovementSpeed;
         }
 	}
 
     public void KeyUp()
     {
-        anim.SetBool("Up", false);
+
     }
 }

@@ -16,10 +16,8 @@ public class Ability1 : ICommand {
 
 	public void KeyHeld()
 	{
-		if (!Game.GamePaused && player.stats.Health > 0 && !EventSystem.current.IsPointerOverGameObject()) {
-			if (player.items.Weapon != null) {
-				player.items.Weapon.UseWeapon ();
-			}
+		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
+			player.characterClass.am.UseAbility (0);
 		}
 	}
 
