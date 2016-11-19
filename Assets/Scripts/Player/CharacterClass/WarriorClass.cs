@@ -5,7 +5,7 @@ public class WarriorClass : ICharacterClass{
 
 	AbilityManager am { get; set; }
 	PlayerStats ps { get; set; }
-	public WarriorClass(){ 
+	public WarriorClass(IAttribute attr){ 
 		am = new AbilityManager ();
 		ps = new PlayerStats (160,50,2,3,1,2);
 	}
