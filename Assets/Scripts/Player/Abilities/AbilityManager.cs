@@ -3,8 +3,13 @@ using System.Collections;
 
 public class AbilityManager {
 
-	public static int abilityLength = 4;
+	private static int abilityLength = 4;
+
 	private IAbility[] ability = new IAbility[abilityLength];
+
+	public int AbilityLength(){
+		return abilityLength;
+	}
 
 	public void SetAbility(IAbility _skill, int _position)
 	{

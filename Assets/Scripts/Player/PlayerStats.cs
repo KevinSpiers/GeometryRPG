@@ -80,29 +80,48 @@ public class PlayerStats {
 		}
 	}
 
-	private int attkDmg;
-	public int AttackDamage
+	private int attk;
+	public int Attack
 	{
 		get
 		{
-			return attkDmg;
+			return attk;
+		}
+	}
+
+	private int attkRange;
+	public int AttackRange
+	{
+		get {
+			return attkRange;
+		}
+	}
+
+	private int movSpd;
+	public int MovementSpeed
+	{
+		get {
+			return movSpd;
 		}
 	}
 
     //HealthExpUpdate hpExpBarUpdate = new HealthExpUpdate();
-	public PlayerStats()
+	public PlayerStats(int _maxHp, int _maxMana, int _attk, int _def, int _attkRange, int _movSpd)
 	{
 		lvl = 1;
 		maxExp = 50;
 		exp = 0;
-		maxHp = 100;
-		hp = maxHp;
-		def = 3;
-		attkDmg = 10;
+		maxHp = _maxHp;
+		hp = _maxHp;
+		maxMana = _maxMana;
+		mana = _maxMana;
 
-		maxHp = 0;
-		def = 0;
-		attkDmg = 0;
+		attk = _attk;
+		def = _def;
+
+		attkRange = _attkRange;
+		movSpd = _movSpd;
+
 	}
 
     //Experience
@@ -196,14 +215,39 @@ public class PlayerStats {
 
 	//Attack
 
-	public void GainAttackDamage(int _attkDmgGain)
+	public void GainAttackDamage(int _attkGain)
 	{
-		attkDmg += _attkDmgGain;
+		attk += _attkGain;
 	}
 
-	public void LoseAttackDamage(int _attkDmgLose)
+	public void LoseAttackDamage(int _attkLose)
 	{
-		attkDmg -= _attkDmgLose;
+		attk -= _attkLose;
+	}
+
+	//Attack Range
+
+	public void GainAttackRange(int _attkRangeGain)
+	{
+		attkRange += _attkRangeGain;
+	}
+
+	public void LostAttackRange(int _attkRangeLose)
+	{
+		attkRange -= _attkRangeLose;
+	}
+
+
+	//Move Speed
+
+	public void GainMoveSpeed(int _movSpdGain)
+	{
+		movSpd += _movSpdGain;
+	}
+
+	public void LoseAttackDamage(int _movSpdLose)
+	{
+		movSpd -= _movSpdLose;
 	}
 
 }

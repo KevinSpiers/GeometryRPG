@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Warrior : MonoBehaviour {
+public class WarriorClass : ICharacterClass{
 
-	// Use this for initialization
-	void Start () {
-	
+	AbilityManager am { get; set; }
+	PlayerStats ps { get; set; }
+	public WarriorClass(){ 
+		am = new AbilityManager ();
+		ps = new PlayerStats (160,50,2,3,1,2);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void SetAbilities(){
+		for (int i = 0; i < am.AbilityLength (); i++) {
+			am.SetAbility (null, i);
+		}
 	}
+
 }
