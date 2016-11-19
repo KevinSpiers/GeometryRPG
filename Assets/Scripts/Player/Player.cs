@@ -3,21 +3,18 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	public PlayerStats stats;
-	public SkillsManager skills;
+	public ICharacterClass characterClass;
 	public IController controls;
 
 	void Start () 
 	{
         Application.runInBackground = true;
-        stats = new PlayerStats ();
-		skills = new SkillsManager ();
 		controls = new KeyboardController (this);
     }
 
 	void Update () 
 	{
         controls.Execute();
-        skills.CoolDown ();
+		characterClass.am.CoolDown ();
 	}
 }
