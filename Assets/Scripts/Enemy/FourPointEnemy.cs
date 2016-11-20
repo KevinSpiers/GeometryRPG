@@ -8,10 +8,17 @@ namespace Assets.Scripts.Enemy
 {
      public class FourPointEnemy : MonoBehaviour, IEnemy
     {
-        FourPointEnemyProfile profile = new FourPointEnemyProfile();
+       public int health { get; set; }
+       public int atkDmg { get; set; }
+
         public FourPointEnemy()
         {
 
+        }
+        void Start()
+        {
+            health = 100;
+            atkDmg = 30;
         }
         void Update()
         {
@@ -40,9 +47,9 @@ namespace Assets.Scripts.Enemy
 
         public void TakeDamage(int dam)
         {
-            profile.health -= dam;
+            health -= dam;
 
-            if(profile.health < 0)
+            if(health < 0)
             {
                 Destroy(this.gameObject);
             }
