@@ -35,7 +35,7 @@ public class AbilityManager {
 					Animator anim = GameObject.Find ("Ability" + j).GetComponent<Animator> ();
 					if (!anim.GetBool ("isInCooldown")) {
 						anim.SetBool ("isInCooldown", true);
-						anim.speed = anim.GetCurrentAnimatorStateInfo(0).length/AbilityUtils.getAbilityCooldown (ability [i]);
+						anim.speed = (17.0f/60)/AbilityUtils.getAbilityCooldown (ability [i]);
 					}
 				} else {
 					int j = i + 1;
