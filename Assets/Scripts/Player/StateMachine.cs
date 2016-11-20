@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class StateMachine  {
-	enum Direction{LEFT, RIGHT, UP, DOWN}
-	Direction dir = Direction.UP;
+	public enum Direction{LEFT, RIGHT, UP, DOWN}
+	public Direction dir = Direction.UP;
 	Player player;
 
 	private Vector2 horizontalMovement = Vector2.zero;
@@ -65,6 +65,20 @@ public class StateMachine  {
 		Vector2.SmoothDamp(verticalMovement, Vector2.zero, ref verticalMovement, .5f);
 		Vector2.SmoothDamp(horizontalMovement, Vector2.zero, ref horizontalMovement, .5f);
 		//player.GetComponentInChildren<Animator>().SetInteger("Health", player.stats.Health);
+	}
+
+	public Vector2 DirectionToVector(){
+		Vector2 vec = new Vector2 ();
+		if (dir == StateMachine.Direction.UP) {
+			vec = Vector2.up;
+		} else if (dir == StateMachine.Direction.DOWN) {
+			vec = Vector2.down;
+		} else if (dir == StateMachine.Direction.LEFT) {
+			vec = Vector2.left;
+		} else if (dir == StateMachine.Direction.LEFT) {
+			vec = Vector2.right;
+		}
+		return vec;
 	}
 
 }

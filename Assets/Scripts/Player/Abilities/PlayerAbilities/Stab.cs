@@ -20,7 +20,8 @@ public class Stab : IAbility {
 	
 	private void CreateAttack()
 	{
-		
+		Vector2 vec = (Vector2)player.gameObject.transform.position + player.playerState.DirectionToVector ();
+
 	}
 
 
