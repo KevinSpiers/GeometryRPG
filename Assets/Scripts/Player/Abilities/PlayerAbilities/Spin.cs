@@ -16,7 +16,7 @@ public class Spin : IAbility {
 	public Spin(Player _player)
 	{
 		player = _player;
-		akd = new CoolDownTimer (3f);
+		akd = new CoolDownTimer (AbilityUtils.SpinCD);
 	}
 
 	private void CreateAttack()

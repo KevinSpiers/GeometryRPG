@@ -15,7 +15,7 @@ public class Beam : IAbility {
 	public Beam(Player _player)
 	{
 		player = _player;
-		akd = new CoolDownTimer (30f);
+		akd = new CoolDownTimer (AbilityUtils.BeamCD);
 	}
 
 	private void CreateAttack()

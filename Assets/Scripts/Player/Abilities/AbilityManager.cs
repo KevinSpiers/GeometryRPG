@@ -30,6 +30,18 @@ public class AbilityManager {
 		for(int i = 0; i < abilityLength; i++){
 			if(ability[i] != null){
 				ability[i].AbilityCoolDown.CoolDown();
+				if (!ability [i].AbilityCoolDown.CanUse) {
+					int j = i + 1;
+					Animator anim = GameObject.Find ("Ability" + j).GetComponent<Animator> ();
+					if (!anim.GetBool ("isInCooldown")) {
+						anim.SetBool ("isInCooldown", true);
+						anim.speed = anim.GetCurrentAnimatorStateInfo(0).length/AbilityUtils.getAbilityCooldown (ability [i]);
+					}
+				} else {
+					int j = i + 1;
+					Animator anim = GameObject.Find ("Ability" + j).GetComponent<Animator> ();
+					anim.SetBool ("isInCooldown", false);
+				}
 			}
 		}
 	}

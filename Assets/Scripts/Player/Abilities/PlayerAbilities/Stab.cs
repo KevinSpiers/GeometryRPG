@@ -15,7 +15,7 @@ public class Stab : IAbility {
 	public Stab(Player _player)
 	{
 		player = _player;
-		akd = new CoolDownTimer (.5f);
+		akd = new CoolDownTimer (AbilityUtils.StabCD);
     }
 	
 	private void CreateAttack()

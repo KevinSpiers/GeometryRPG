@@ -15,7 +15,7 @@ public class WarriorBoost : IAbility {
 	public WarriorBoost(Player _player)
 	{
 		player = _player;
-		akd = new CoolDownTimer (20f);
+		akd = new CoolDownTimer (AbilityUtils.WarriorBoostCD);
 	}
 
 	private void CreateAttack()
