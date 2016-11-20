@@ -23,10 +23,4 @@ public class Player : MonoBehaviour {
         controls.Execute();
 		characterClass.am.CoolDown ();
 	}
-	/*void FixedUpdate()
-	{
-		playerState.SmoothMoves ();
-		controls.Execute();
-		characterClass.am.CoolDown ();
-	}*/
 }

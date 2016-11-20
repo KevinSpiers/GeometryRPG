@@ -32,13 +32,9 @@ public class StabObject : MonoBehaviour, IAbilityObject {
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-		//Debug.Log(coll.gameObject.tag);
-		/*if (!coll.gameObject.CompareTag ("Player") && !coll.gameObject.CompareTag("Drop") && !coll.gameObject.CompareTag("Attack")) {
-			if(coll.gameObject.CompareTag("Enemy")){
-				coll.gameObject.GetComponent<IEnemy>().EnemyProp.stats.LoseHealth(Damage);
-			}
-			Destroy(this.gameObject);
-		}*/
+		if(coll.gameObject.GetComponent<IEnemy>() != null){
+			coll.gameObject.GetComponent<IEnemy>().TakeDamage(player.characterClass.ps.Attack);
+		}
 	}
 
 	void Update () 
