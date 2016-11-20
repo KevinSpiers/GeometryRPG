@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Fireball : IAbility {
+public class Stab : IAbility {
 	private Player player;
 	private CoolDownTimer akd;
 	public CoolDownTimer AbilityCoolDown
@@ -12,10 +12,10 @@ public class Fireball : IAbility {
 		} 
 	}
 
-	public Fireball(Player _player)
+	public Stab(Player _player)
 	{
 		player = _player;
-		akd = new CoolDownTimer (5);
+		akd = new CoolDownTimer (.5f);
     }
 	
 	private void CreateAttack()

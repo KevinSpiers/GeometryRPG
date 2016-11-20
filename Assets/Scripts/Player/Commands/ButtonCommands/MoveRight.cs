@@ -21,9 +21,7 @@ public class MoveRight : ICommand {
 
 	public void KeyHeld()
 	{
-		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
-            controller.HorizontalMovement = Vector2.right * player.characterClass.ps.MovementSpeed;
-        }
+		player.playerState.MoveRight ();
 	}
 
     public void KeyUp()

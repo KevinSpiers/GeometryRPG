@@ -21,9 +21,7 @@ public class MoveLeft : ICommand {
 
 	public void KeyHeld()
 	{
-		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
-            controller.HorizontalMovement = Vector2.left * player.characterClass.ps.MovementSpeed;
-        }
+		player.playerState.MoveLeft ();
 	}
 
     public void KeyUp()

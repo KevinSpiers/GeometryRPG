@@ -21,9 +21,7 @@ public class MoveUp : ICommand {
 
 	public void KeyHeld()
 	{
-		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
-			controller.VerticalMovement = Vector2.up * player.characterClass.ps.MovementSpeed;
-        }
+		player.playerState.MoveUp ();
 	}
 
     public void KeyUp()

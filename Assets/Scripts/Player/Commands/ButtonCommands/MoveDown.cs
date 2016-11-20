@@ -21,9 +21,7 @@ public class MoveDown : ICommand {
 
 	public void KeyHeld()
 	{
-		if (!Game.GamePaused && player.characterClass.ps.Health > 0) {
-			controller.VerticalMovement = Vector2.down * player.characterClass.ps.MovementSpeed;
-        }
+		player.playerState.MoveDown ();
 	}
 
     public void KeyUp()
