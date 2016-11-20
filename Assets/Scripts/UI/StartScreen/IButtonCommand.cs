@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Assets.Scripts.UI.StartScreen
 {
-    interface IStartCommand
+    interface IButtonCommand
     {
+        void Activate();
     }
 }

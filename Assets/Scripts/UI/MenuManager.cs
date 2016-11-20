@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using Assets.Scripts.UI.StartScreen;
 
 public class MenuManager{
     int[,] buttonExistanceGrid; //value of 1 means there is a button there, 0 means no button
@@ -55,8 +56,7 @@ public class MenuManager{
     {
         //find the action associated with the currently selected menu option
         Debug.Log("Character Setup Selected!");
-        buttonObjectGrid[selectedRow, selectedColumn].Invoke("Activate", 0);
-        //change to get component IStartCommand
+        buttonObjectGrid[selectedRow, selectedColumn].GetComponent<IButtonCommand>().Activate();
 
     }
     public void MoveSelectorLeft()
