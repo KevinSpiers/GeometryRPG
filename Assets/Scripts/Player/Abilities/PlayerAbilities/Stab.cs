@@ -20,8 +20,9 @@ public class Stab : IAbility {
 	
 	private void CreateAttack()
 	{
-		Vector2 vec = (Vector2)player.gameObject.transform.position + player.playerState.DirectionToVector ();
-
+		GameObject sword = GameObject.Instantiate(Resources.Load("Prefabs/sword")) as GameObject;
+		StabObject swordScript = sword.GetComponent<StabObject>();
+		swordScript.Make(player);
 	}
 
 

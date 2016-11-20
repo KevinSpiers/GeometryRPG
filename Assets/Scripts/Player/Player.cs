@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
 	{
         //Application.runInBackground = true;
         characterClass = PlayerUtils.characterClass;
+		characterClass.SetAbilities (this);
 		attr = new ExtraHealth ();
 		controls = new KeyboardController (this);
 		playerState = new StateMachine (this);

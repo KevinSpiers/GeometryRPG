@@ -75,7 +75,7 @@ public class StateMachine  {
 			vec = Vector2.down;
 		} else if (dir == StateMachine.Direction.LEFT) {
 			vec = Vector2.left;
-		} else if (dir == StateMachine.Direction.LEFT) {
+		} else if (dir == StateMachine.Direction.RIGHT) {
 			vec = Vector2.right;
 		}
 		return vec;

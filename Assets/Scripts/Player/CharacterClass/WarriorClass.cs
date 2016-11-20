@@ -10,9 +10,9 @@ public class WarriorClass : ICharacterClass{
 		ps = new PlayerStats (160,50,2,3,1,2);
 	}
 
-	public void SetAbilities(){
+	public void SetAbilities(Player player){
 		for (int i = 0; i < am.AbilityLength (); i++) {
-			am.SetAbility (null, i);
+			am.SetAbility (new Stab(player), i);
 		}
 	}
 
