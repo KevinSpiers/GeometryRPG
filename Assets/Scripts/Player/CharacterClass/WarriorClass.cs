@@ -14,7 +14,7 @@ public class WarriorClass : ICharacterClass{
 		am.SetAbility (new Stab(player), 0);
 		am.SetAbility (new Spin(player), 1);
 		am.SetAbility (new WarriorBoost(player), 2);
-		am.SetAbility (new Stab(player), 3);
+		am.SetAbility (new Beam(player), 3);
 
 	}
 
