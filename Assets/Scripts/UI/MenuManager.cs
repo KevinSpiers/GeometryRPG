@@ -11,18 +11,20 @@ public class MenuManager{
     int rows;
     int columns;
 
-    public MenuManager(int rows, int columns, int defaultRow, int defaultCol, Button first){
+    public MenuManager(int rows, int columns, int defaultRow, int defaultCol,  Button first){
+
         buttonExistanceGrid = new int[rows, columns];
+        InitializeGrid();
         selectedColumn = defaultCol;
         selectedRow = defaultRow;
+        buttonObjectGrid = new Button[rows,columns];
 
         SetButton(defaultRow, defaultCol, first);
-
-        //gameObject.GetComponentInChildren<Text>().color = new Color(255, 255, 255, 255);
+        Select();
 
         this.rows = rows;
         this.columns = columns;
-        InitializeGrid();
+        
     }
 
     private void InitializeGrid()
@@ -42,22 +44,24 @@ public class MenuManager{
     }
     void Select()
     {
-        buttonObjectGrid[selectedRow,selectedColumn].gameObject.GetComponentInChildren<Text>().color = new Color(255, 255, 255, 255);
+        buttonObjectGrid[selectedRow,selectedColumn].gameObject.GetComponentInChildren<Text>().color = new Color(255, 0, 0, 255);
     }
     void Deselect()
     {
-        buttonObjectGrid[selectedRow, selectedColumn].gameObject.GetComponentInChildren<Text>().color = new Color(255, 0, 0, 255);
+        buttonObjectGrid[selectedRow, selectedColumn].gameObject.GetComponentInChildren<Text>().color = new Color(0, 0, 0, 255);
     }
 
     public void ActivateCurrent()
     {
         //find the action associated with the currently selected menu option
+        Debug.Log("Character Setup Selected!");
         buttonObjectGrid[selectedRow, selectedColumn].Invoke("Activate", 0);
+        //change to get component IStartCommand
 
     }
     public void MoveSelectorLeft()
     {
-        int newCol = (selectedColumn - 1) % columns;
+        int newCol = mod((selectedColumn - 1), columns);
         if(buttonExistanceGrid[selectedRow, newCol] == 1)
         {
             Deselect();
@@ -67,7 +71,7 @@ public class MenuManager{
     }
     public void MoveSelectorRight()
     {
-        int newCol = (selectedColumn + 1) % columns;
+        int newCol = mod((selectedColumn + 1) , columns);
         if (buttonExistanceGrid[selectedRow, newCol] == 1)
         {
             Deselect();
@@ -77,7 +81,7 @@ public class MenuManager{
     }
     public void MoveSelectorUp()
     {
-        int newRow = (selectedRow - 1) % rows;
+        int newRow = mod((selectedRow - 1) ,rows);
         if (buttonExistanceGrid[newRow, selectedColumn] == 1)
         {
             Deselect();
@@ -87,13 +91,18 @@ public class MenuManager{
     }
     public void MoveSelectorDown()
     {
-        int newRow = (selectedRow + 1) % rows;
+        int newRow = mod((selectedRow + 1), rows);
         if (buttonExistanceGrid[newRow, selectedColumn] == 1)
         {
             Deselect();
             selectedRow = newRow;
             Select();
         }
+    }
+    int mod(int a, int b)
+    {
+        int r = a % b;
+        return r < 0 ? r + b : r;
     }
 }
 
