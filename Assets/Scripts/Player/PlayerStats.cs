@@ -107,8 +107,7 @@ public class PlayerStats
             return movSpd;
         }
     }
-
-    //HealthExpUpdate hpExpBarUpdate = new HealthExpUpdate();
+		
     public PlayerStats(int _maxHp, int _maxMana, int _attk, int _def, int _attkRange, int _movSpd)
     {
         lvl = 1;
@@ -130,23 +129,18 @@ public class PlayerStats
     //Experience
 
     public void GainExperience(int _exp)
-    {
-        if (lvl != Maxlvl)
-        {
-            exp += _exp;
-            if (exp >= maxExp)
-            {
-                exp -= maxExp;
-                lvl += 1;
-                maxExp = Mathf.FloorToInt(.1f * Mathf.Pow(lvl, 2f) + 50f);
-            }
-        }
-        else
-        {
-            exp = maxExp;
-        }
-        //hpExpBarUpdate.UpdateExperienceBar();
-    }
+	{
+		if (lvl != Maxlvl) {
+			exp += _exp;
+			if (exp >= maxExp) {
+				exp -= maxExp;
+				lvl += 1;
+				maxExp = Mathf.FloorToInt (.1f * Mathf.Pow (lvl, 2f) + 50f);
+			}
+		} else {
+			exp = maxExp;
+		}
+	}
 
     //Health
 
@@ -160,7 +154,7 @@ public class PlayerStats
         {
             hp += _heal;
         }
-        //hpExpBarUpdate.UpdateHealthBar();
+		GameObject.Find ("HealthBar").GetComponent<RectTransform> ().localScale = new Vector3 ((hp*1.0f)*6 / maxHp, 6, 1);
     }
 
     public void LoseHealth(int _hurt)
@@ -173,7 +167,7 @@ public class PlayerStats
         {
             hp -= _hurt;
         }
-        //hpExpBarUpdate.UpdateHealthBar();
+		GameObject.Find ("HealthBar").GetComponent<RectTransform> ().localScale = new Vector3 ((hp*1.0f)*6 / maxHp, 6, 1);
     }
 
     //Max Health
@@ -183,7 +177,7 @@ public class PlayerStats
         float prop = hp / (maxHp * 1.0f);
         maxHp += _maxHpGain;
         hp = (int)(maxHp * prop);
-        //hpExpBarUpdate.UpdateHealthBar();
+		GameObject.Find ("HealthBar").GetComponent<RectTransform> ().localScale = new Vector3 ((hp*1.0f)*6 / maxHp, 6, 1);
     }
 
     //Mana
@@ -197,6 +191,7 @@ public class PlayerStats
         {
             mana += _mana;
         }
+		GameObject.Find ("ManaBar").GetComponent<RectTransform> ().localScale = new Vector3 ((mana*1.0f)*6 / maxMana, 6, 1);
     }
 
     public void LoseMana(int _mana)
@@ -209,6 +204,7 @@ public class PlayerStats
         {
             mana -= _mana;
         }
+		GameObject.Find ("ManaBar").GetComponent<RectTransform> ().localScale = new Vector3 ((mana*1.0f)*6 / maxMana, 6, 1);
     }
 
     //Max Mana
@@ -218,6 +214,7 @@ public class PlayerStats
         float prop = mana / (maxMana * 1.0f);
         maxMana += _maxManaGain;
         mana = (int)(maxMana * prop);
+		GameObject.Find ("ManaBar").GetComponent<RectTransform> ().localScale = new Vector3 ((mana*1.0f)*6 / maxMana, 6, 1);
     }
 
     //Defence
