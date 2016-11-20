@@ -6,15 +6,12 @@ public class StartScreenManager : MonoBehaviour {
     MenuManager mm;
     IController mc;
     public Button[] buttons;
-    public Button b1;
     
 	// Use this for initialization
-	void Start () {
-        //b1 = GameObject.Find("WarriorHealth").GetComponent<Button>();
+	void Start () { 
         
         //create menu manager and add buttons
         mm = new MenuManager(3, 3, 0, 0, buttons[0]);
-        //mm = new MenuManager(3, 3, 0, 0, b1);
 
         //set controller to menu controller
         mc = new MenuController(mm);
