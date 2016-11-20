@@ -25,7 +25,6 @@ public class StabObject : MonoBehaviour, IAbilityObject {
 	void Start () {
 		this.gameObject.transform.position = StartLocation;
 		Rigidbody2D rigidbody = this.gameObject.GetComponent<Rigidbody2D> ();
-		Debug.DrawRay (this.gameObject.transform.position,Direction);
 		float sign = (Vector2.up.x < Direction.x)? -1.0f : 1.0f;
 		rigidbody.transform.Rotate (0f,0f,Vector2.Angle(Vector2.up, Direction) * sign);
 		timer = new AbilityExpirationTimer (.3f);

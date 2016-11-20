@@ -23,7 +23,7 @@ public class SpinObject : MonoBehaviour, IAbilityObject {
 	void Start () {
 		this.gameObject.transform.position = StartLocation;
 		Rigidbody2D rigidbody = this.gameObject.GetComponent<Rigidbody2D> ();
-		timer = new AbilityExpirationTimer (2f);
+		timer = new AbilityExpirationTimer (.5f);
 	}
 
 	void OnTriggerEnter2D(Collider2D coll)
@@ -39,7 +39,7 @@ public class SpinObject : MonoBehaviour, IAbilityObject {
 
 	void Update () 
 	{
-		GetComponent<Rigidbody>().transform.Rotate (Vector3.forward*Time.deltaTime);
+		this.gameObject.GetComponent<Rigidbody2D>().transform.Rotate (Vector3.forward*Time.deltaTime*500);
 		this.transform.position = player.transform.position;
 		if (timer.shouldDestroy ()) {
 			Destroy (this.gameObject);

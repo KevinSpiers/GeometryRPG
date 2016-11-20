@@ -11,9 +11,11 @@ public class WarriorClass : ICharacterClass{
 	}
 
 	public void SetAbilities(Player player){
-		for (int i = 0; i < am.AbilityLength (); i++) {
-			am.SetAbility (new Stab(player), i);
-		}
+		am.SetAbility (new Stab(player), 0);
+		am.SetAbility (new Spin(player), 1);
+		am.SetAbility (new WarriorBoost(player), 2);
+		am.SetAbility (new Stab(player), 3);
+
 	}
 
 }
